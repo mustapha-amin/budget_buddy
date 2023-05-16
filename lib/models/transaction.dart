@@ -5,7 +5,7 @@ part 'transaction.g.dart';
 @HiveType(typeId: 1)
 class TransactionModel {
   @HiveField(0)
-  int? id;
+  String? description;
 
   @HiveField(1)
   bool? isExpense;
@@ -17,7 +17,7 @@ class TransactionModel {
   DateTime? dateTime;
 
   TransactionModel({
-    this.id,
+    this.description,
     this.isExpense = true,
     this.amount,
     this.dateTime,
