@@ -1,4 +1,4 @@
-import 'package:budget_buddy/constants.dart';
+import 'package:budget_buddy/constants/textStyles.dart';
 import 'package:budget_buddy/models/account.dart';
 import 'package:budget_buddy/models/transaction.dart';
 import 'package:flutter/material.dart';
