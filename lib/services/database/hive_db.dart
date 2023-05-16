@@ -5,6 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveService extends ChangeNotifier {
+  static final HiveService _hiveService = HiveService._internal();
+
+  factory HiveService() {
+    return _hiveService;
+  }
+
+  HiveService._internal();
+
   late Box<AccountModel> accountsBox;
 
   Future<void> initializeDB() async {
@@ -50,5 +58,4 @@ class HiveService extends ChangeNotifier {
 
   List<List<TransactionModel>?> get transactions =>
       accountsBox.values.map((e) => e.transactions).toList();
-
 }
