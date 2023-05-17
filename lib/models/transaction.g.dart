@@ -21,6 +21,7 @@ class TransactionModelAdapter extends TypeAdapter<TransactionModel> {
       isExpense: fields[1] as bool?,
       amount: fields[2] as double?,
       dateTime: fields[3] as DateTime?,
+      accountID: fields[4] as int?,
     );
   }
 
@@ -35,7 +36,9 @@ class TransactionModelAdapter extends TypeAdapter<TransactionModel> {
       ..writeByte(2)
       ..write(obj.amount)
       ..writeByte(3)
-      ..write(obj.dateTime);
+      ..write(obj.dateTime)
+      ..writeByte(4)
+      ..write(obj.accountID);
   }
 
   @override

@@ -16,10 +16,14 @@ class TransactionModel {
   @HiveField(3)
   DateTime? dateTime;
 
+  @HiveField(4)
+  int? accountID;
+
   TransactionModel({
     this.description,
     this.isExpense = true,
     this.amount,
     this.dateTime,
+    this.accountID,
   });
 }

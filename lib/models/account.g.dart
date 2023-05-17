@@ -17,34 +17,28 @@ class AccountModelAdapter extends TypeAdapter<AccountModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return AccountModel(
-      id: fields[0] as int?,
-      title: fields[1] as String?,
-      type: fields[2] as String?,
-      currency: fields[3] as String?,
-      amount: fields[4] as double?,
-      iconID: fields[5] as int?,
-      transactions: (fields[6] as List?)?.cast<TransactionModel>(),
+      title: fields[0] as String?,
+      type: fields[1] as String?,
+      currency: fields[2] as String?,
+      amount: fields[3] as double?,
+      iconID: fields[4] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, AccountModel obj) {
     writer
-      ..writeByte(7)
-      ..writeByte(0)
-      ..write(obj.id)
-      ..writeByte(1)
-      ..write(obj.title)
-      ..writeByte(2)
-      ..write(obj.type)
-      ..writeByte(3)
-      ..write(obj.currency)
-      ..writeByte(4)
-      ..write(obj.amount)
       ..writeByte(5)
-      ..write(obj.iconID)
-      ..writeByte(6)
-      ..write(obj.transactions);
+      ..writeByte(0)
+      ..write(obj.title)
+      ..writeByte(1)
+      ..write(obj.type)
+      ..writeByte(2)
+      ..write(obj.currency)
+      ..writeByte(3)
+      ..write(obj.amount)
+      ..writeByte(4)
+      ..write(obj.iconID);
   }
 
   @override
