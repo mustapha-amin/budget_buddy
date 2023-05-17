@@ -4,14 +4,21 @@ import 'package:flutter/material.dart';
 
 class AccountWidget extends StatelessWidget {
   AccountModel accountModel;
-  IconData? icon;
-  AccountWidget({required this.accountModel, this.icon, super.key});
+  AccountWidget({required this.accountModel, super.key});
 
   @override
   Widget build(BuildContext context) {
+    IconData icon = switch (accountModel.iconID) {
+      1 => Icons.money,
+      2 => Icons.credit_card,
+      3 => Icons.account_balance,
+      4 => Icons.credit_card_sharp,
+      _ => Icons.account_balance_wallet_outlined,
+    };
+
     return Container(
-      width: Utils(context).screenSize.width / 1.7,
-      height: Utils(context).screenSize.height / 4,
+      width: Utils(context).screenWidth / 1.7,
+      height: Utils(context).screenHeight / 4,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.black,
@@ -21,8 +28,8 @@ class AccountWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Icon(
-            Icons.account_balance,
+          Icon(
+            icon,
             color: Colors.white,
           ),
           Column(
