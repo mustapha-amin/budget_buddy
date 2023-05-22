@@ -1,4 +1,4 @@
-import 'package:budget_buddy/constants/textStyles.dart';
+import 'package:budget_buddy/constants/hive_constants.dart';
 import 'package:budget_buddy/constants/utils.dart';
 import 'package:budget_buddy/models/account.dart';
 import 'package:budget_buddy/models/transaction.dart';
@@ -42,12 +42,12 @@ class HiveService extends ChangeNotifier {
 
   List<AccountModel> get accounts => accountsBox.values.toList();
 
-  void addTransaction(TransactionModel transactionModel) {
+  Future<void> addTransaction(TransactionModel transactionModel) async {
     if ((transactionModel.isExpense! &&
             accounts[transactionModel.accountID!].amount! >=
                 transactionModel.amount!) ||
         transactionModel.isExpense! == false) {
-      transactionsBox.add(transactionModel);
+      await transactionsBox.add(transactionModel);
 
       if (transactionModel.isExpense!) {
         accounts[transactionModel.accountID!].amount =
@@ -75,4 +75,7 @@ class HiveService extends ChangeNotifier {
   }
 
   List<TransactionModel> get transactions => transactionsBox.values.toList();
+  List<TransactionModel> get transactionsForToday => transactions
+      .where((element) => element.dateTime!.day == DateTime.now().day)
+      .toList();
 }

@@ -1,9 +1,19 @@
-import 'package:flutter/material.dart';
+class InsufficientBalanceError implements Exception {
+  const InsufficientBalanceError();
+}
 
-class Utils {
-  BuildContext? context;
-  Utils(this.context);
-  
-  double get screenHeight => MediaQuery.of(context!).size.height;
-  double get screenWidth => MediaQuery.of(context!).size.width;
+
+extension on String {
+  String get title =>
+      this[0].toUpperCase() + substring(1, length - 1).toLowerCase();
+}
+
+enum Account {
+  manageAccounts,
+  transactionHistory,
+}
+
+enum Transaction {
+  expense,
+  income,
 }
