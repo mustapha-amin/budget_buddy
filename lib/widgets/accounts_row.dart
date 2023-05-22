@@ -1,12 +1,9 @@
-import 'dart:developer';
 
-import 'package:budget_buddy/screens/add_account.dart';
 import 'package:budget_buddy/widgets/add_account_button.dart';
 import 'package:flutter/material.dart';
 import 'package:budget_buddy/database/hive_db.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/utils.dart';
 import 'account.dart';
 
 class AccountsRow extends StatelessWidget {

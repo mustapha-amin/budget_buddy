@@ -1,4 +1,3 @@
-import 'package:budget_buddy/models/transaction.dart';
 import 'package:hive/hive.dart';
 
 part 'account.g.dart';

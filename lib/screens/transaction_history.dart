@@ -1,4 +1,3 @@
-import 'package:budget_buddy/constants/utils.dart';
 import 'package:budget_buddy/database/hive_db.dart';
 import 'package:budget_buddy/widgets/transaction_tile.dart';
 import 'package:flutter/material.dart';

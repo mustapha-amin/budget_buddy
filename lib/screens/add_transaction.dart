@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:budget_buddy/constants/utils.dart';
 import 'package:budget_buddy/models/account.dart';
 import 'package:budget_buddy/models/transaction.dart';
@@ -22,7 +20,6 @@ class _AddTransactionState extends State<AddTransaction> {
   TextEditingController descriptionController = TextEditingController();
   Transaction transaction = Transaction.expense;
   AccountModel? _selectedAccount;
-  int _selected = 0;
 
   @override
   Widget build(BuildContext context) {

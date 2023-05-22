@@ -1,9 +1,7 @@
-import 'package:budget_buddy/constants/utils.dart';
 import 'package:budget_buddy/models/account.dart';
 import 'package:budget_buddy/models/transaction.dart';
 import 'package:budget_buddy/database/hive_db.dart';
 import 'package:flutter/material.dart';
-import 'package:build_daemon/constants.dart';
 
 extension on String {
   String get title =>

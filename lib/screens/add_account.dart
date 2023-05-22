@@ -4,8 +4,6 @@ import 'package:budget_buddy/widgets/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/utils.dart';
-
 class AddAccount extends StatefulWidget {
   const AddAccount({super.key});
 

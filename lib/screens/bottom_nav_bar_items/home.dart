@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:budget_buddy/screens/add_transaction.dart';
 import 'package:budget_buddy/database/hive_db.dart';
 import 'package:budget_buddy/widgets/spacing.dart';
@@ -57,8 +56,6 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
         onPressed: () {
-          database.clearTransactions();
-
           database.accounts.isEmpty
               ? ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
