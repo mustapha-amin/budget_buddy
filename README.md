@@ -1,4 +1,4 @@
-Home Page
+#Home Page
 ![Screenshot_20230522-215031](https://github.com/mustapha-amin/budget_buddy/assets/70119794/d4004934-8f4d-40ac-8c6a-d9b192ce2927)
 Add transaction screen
 ![Screenshot_20230522-215100](https://github.com/mustapha-amin/budget_buddy/assets/70119794/7610a4df-7c59-4c9f-a0c2-c42fe21a64cf)
